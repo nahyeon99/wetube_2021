@@ -5,11 +5,14 @@ import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 
 const PORT = 4000;
-
 const app = express();
+
+console.log(process.cwd());
+
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
 const logger = morgan("dev");
 app.use(logger);
-
 app.use("/", globalRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
