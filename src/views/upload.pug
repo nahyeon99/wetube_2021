@@ -3,4 +3,6 @@ extends layouts/main
 block content 
     form(method="POST")
         input(name="title", placeholder="Title", type="text", required="true")
+        input(name="description", placeholder="Description", type="text", required="true")
+        input(name="hashtags", placeholder="Hashtags, separated by comma.", type="text", required="true")
         input(type="submit", value="Upload Video")
