@@ -4,7 +4,7 @@ let videos = [
     rating: 5,
     comments: 2,
     createdAt: "2 minute ago",
-    views: 59,
+    views: 1,
     id: 0,
   },
   {
@@ -31,13 +31,15 @@ export const home = (req, res) => {
 export const search = (req, res) => {
   res.render("search");
 };
-export const see = (req, res) => {
+export const watch = (req, res) => {
   const {
     params: { id },
   } = req;
   const video = videos[id];
-
-  return res.render("watchVideo", { pageTitle: `Watching ${video.title}` });
+  return res.render("watchVideo", {
+    pageTitle: `Watching ${video.title}`,
+    video,
+  });
 };
 export const editVideo = (req, res) => {
   res.render("editVideo");
