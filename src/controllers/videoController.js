@@ -62,6 +62,7 @@ export const postUpload = async (req, res) => {
   const dbVideo = await video.save();
 
   /*
+  다른 방식
   await Video.create({
     title,
     description,
